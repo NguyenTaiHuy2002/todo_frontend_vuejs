@@ -1,0 +1,355 @@
+* {
+    font-family: sans-serif;
+  }
+
+  #app {
+    background: linear-gradient(to right, #767af5, #f7af85);
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    min-height: 100vh;
+  }
+  
+  .title {
+    text-align: center;
+    color: red;
+    font-size: 3cap;
+    margin: 0;
+    font-family: cursive;
+  }
+  
+  .main-wrap {
+    width: 750px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    /* margin-top: 6rem !important;
+    margin-bottom: 3rem !important; */
+    background-color: #fff;
+    margin: auto;
+  }
+  
+  .input_todo {
+    display: flex;
+  }
+  
+  .sub-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .input-text {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .btn-add {
+    padding: 11px 20px;
+    border-radius: 8px;
+    background-color: blue;
+    border: 1px solid blue;
+    color: #fff;
+  }
+  
+  .btn-add:hover {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid blue;
+    cursor: pointer;
+  }
+  
+  .list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .item:hover {
+    cursor: move;
+    background-color: #f9f9f9;
+  }
+
+  .item:hover .icon-pin i{
+    visibility: inherit;
+  }
+
+  .item-content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .edit-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .edit-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+  .item-tittle {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 450px;
+    text-overflow: ellipsis;
+  }
+  
+  .button span:hover {
+    cursor: pointer;
+    color: #ff0000;
+  }
+
+  .btn-save {
+    position: absolute;
+    right: 0px;
+  }
+
+  .btn-save i {
+    margin-right: 20px;
+    font-size: 24px;
+  }
+
+  .btn-save i:hover {
+    color: #00cd00;
+    cursor: pointer;
+  }
+  
+  .checked {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.5); /* Làm mờ chữ */
+  }
+  
+  .complete-text {
+    color: #00cd00;
+  }
+  
+  .clear-task {
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  
+  .disabled {
+    color: grey;
+    cursor: not-allowed;
+  }
+  
+  .btns-filter .active {
+    background-color: blue;
+    color: #fff;
+  }
+  
+  .btn-filter {
+    background-color: #f7f7f7;
+    padding: 6px;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin:  0 3px;
+    min-width: 60px;
+  }
+  
+  .btn-filter:hover {
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* btn mở rộng filter */
+
+  .btn-filter-extend {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .btn-filter-extend .isActived {
+    color: #0000ff;
+  } 
+  .btn-filter-extend .isActived i {
+    transform: rotateZ(180deg);
+  }
+  /* end */
+
+  /* lọc nâng cao */
+  .filter-extend-wrap {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    animation: show 0.3s linear;
+  }
+
+  .filter-extend-tittle {
+    display: block;
+    font-weight: 600;
+  }
+
+  .filter-extend-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  .filter-extend-input-group {
+    display: flex;
+    position: relative;
+  }
+
+  .filter-extend-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid #0000ff;
+    padding: 0 36px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #0000ff;
+  }
+
+  .filter-extend-btn:hover {
+    background-color: transparent;
+    color: #000;
+  }
+
+  /* .filter-extend-input-group .filter-extend-input {
+    margin: 0 4px;
+  } */
+
+  .icon-pin i {
+    transform: rotate(35deg);
+    visibility: hidden;
+  }
+
+  .icon-pin:hover i {
+    transform: unset;
+  }
+
+  .isPinned i{
+    visibility: inherit;
+    color: #ff0000;
+    transform: unset;
+  }
+
+    /* Tablet */
+  @media (min-width: 740px) and (max-width: 1023px) {
+    .main-wrap {
+      width: auto;
+      margin: 10px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 739px) {
+    .main-wrap {
+      width: auto;
+      margin: 0 6px;
+      padding: 6px;
+    }
+
+    .nav-logo {
+      margin: 10px !important;
+    }
+
+    .nav-button {
+      display: none !important;
+    }
+
+    .isOpenMenu {
+      display: contents !important;
+      margin: 0 !important;
+    }
+
+
+    .nav-item {
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .nav-menu-btn {
+        display: block !important;
+        font-size: 30px;
+        padding: 10px 20px;
+    }
+
+    .item-tittle {
+      max-width: 185px;
+    }
+
+    .btn-filter {
+      margin: 0;
+    }
+
+    .btns-filter-mobile {
+      position: relative;
+    }
+  
+  
+    .btn-choose-type {
+      padding: 2px 6px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+  
+    }
+  
+    .btns-filter-group {
+      position: absolute;
+      list-style: none;
+      padding: 8px 8px 0;
+      right: 0;
+      top: calc(100% + 2px);
+      z-index: 1;
+      background-color: #fff;
+      box-shadow: 0px 2px 6px #ccc;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      animation: show 0.3s linear;
+    }
+  
+    .isActivedFilterMobile {
+      background-color: #ccc;
+    }
+    .isActivedFilterMobile i {
+      transform: rotateZ(180deg);
+    }
+  }
+  
+  
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
